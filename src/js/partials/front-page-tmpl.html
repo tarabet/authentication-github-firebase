@@ -1,0 +1,20 @@
+<h1>Hi, I'm front-page-tmpl.html</h1>
+<p>Directive example goes below</p>
+<div my-directive></div>
+<div>Check fontawesome: <i class="fa fa-check"></i></div>
+<div>Check controller: {{ vm.welcomeMsg }}</div>
+<button class="btn btn-success" ng-click="auth.logIn()">LogIn</button>
+<button class="btn btn-danger" ng-click="auth.logOut()">Log Out</button>
+
+<h1 class="ng-cloak" ng-hide="auth.isLoggedIn()">
+    Hi stranger!
+</h1>
+
+<!-- show title if logged in -->
+<h1 class="ng-cloak" ng-show="auth.isLoggedIn()">
+    <!-- show session data -->
+    Hi {{ session.getFullName() }}
+</h1>
+<h1 ng-if="!auth.isLoggedIn()">
+    Access denied!
+</h1>
